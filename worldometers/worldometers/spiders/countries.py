@@ -13,4 +13,11 @@ class CountriesSpider(scrapy.Spider):
 
     def parse(self, response):
         """Initial response is passed to this method by default"""
-        pass
+        title = response.xpath("//h1/text()").get()
+        countries = response.xpath("//td/a/text()").getall()
+
+        yield {
+            'title': title,
+            'coiuntries': countries
+        }
+
