@@ -15,3 +15,7 @@ class SpecialOfferSpider(scrapy.Spider):
                 'discounted_price': product.xpath('.//span[@class="productSpecialPrice fl"]/text()').get(),
                 'original_price': product.xpath('.//span[@class="normalprice fl"]/text()').get(),
             }
+
+        next_url = response.xpath('(//a[@class="nextPage"])[2]/@href').get()
+        if next_url:
+            yield scrapy.Request(url=next_url, callback=self.parse)
