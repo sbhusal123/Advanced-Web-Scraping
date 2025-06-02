@@ -13,3 +13,4 @@
 
 # Resources:
 - [Lua In 15 minutes](http://tylerneylon.com/a/learn-lua/)
+- [Debugging Scrapy Bot](https://github.com/sbhusal123/Advanced-Web-Scraping/tree/main/worldometers)
